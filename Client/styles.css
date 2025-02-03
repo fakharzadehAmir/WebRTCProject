@@ -1,0 +1,160 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #4a4a4a;
+}
+
+h1 {
+    color: #dcffb0;
+    margin: 20px 0;
+}
+
+#communicationSection {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: 80vh;
+    background-color: #4a4a4a;
+}
+
+#callContainer {
+    height: 100%;
+    flex: 4; 
+    display: flex;
+    flex-direction: column;
+    background-color: #2a2a2a;
+    overflow: hidden;
+}
+
+#chatContainer {
+    flex: 1; 
+    height: 78vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #1a1a1a;
+    border-left: 1px solid #4a4a4a;
+    overflow: hidden;
+}
+
+#messages {
+    flex: 1;
+    overflow-y: scroll;
+    padding: 10px;
+    color: #dcffb0;
+}
+
+#messages .message {
+    margin-bottom: 10px;
+}
+
+#chatInputContainer {
+    padding: 5px;
+    display: flex;
+    background-color: #4a4a4a;
+    gap: 10px;
+}
+
+#chatInput {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #6a6a6a;
+    border-radius: 5px;
+    background-color: #2a2a2a;
+    color: #dcffb0;
+}
+
+#sendMessage {
+    padding: 8px 15px;
+    background-color: #2a2a2a;
+    color: #dcffb0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#sendMessage:hover {
+    background-color: #8a8a8a;
+}
+
+#controls {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    background-color: #4a4a4a;
+    justify-content: center;
+}
+
+#controls button {
+    padding: 10px;
+    background-color: #2a2a2a;
+    color: #dcffb0;
+    border: none;
+    border-radius: 3%;
+    cursor: pointer;
+    width: 120px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+#controls button:hover {
+    background-color: #6a6a6a;
+}
+
+#videoGrid {
+    display: grid;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+    height: 90%;
+    flex: 1;
+    padding: 10px;
+    box-sizing: border-box;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+    grid-auto-rows: 1fr; 
+    align-items: center;
+}
+
+#videoGrid video {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    background-color: black;
+    border: 2px solid #080808;
+    border-radius: 10px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#videoGrid video.speaking {
+    border-color: #dcffb0;
+    box-shadow: 0 0 15px 5px #dcffb0;
+}
+
+@media (max-width: 768px) {
+    #communicationSection {
+        flex-direction: column;
+    }
+
+    #callContainer {
+        flex: none;
+        height: 70%;
+    }
+
+    #chatContainer {
+        flex: none;
+        height: 30%;
+    }
+}
+
+@media (max-width: 480px) {
+    #videoGrid {
+        gap: 6px;
+    }
+}
